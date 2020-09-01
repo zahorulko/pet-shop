@@ -1,0 +1,49 @@
+{
+    "products": [
+        {
+            "id": 1001,
+            "title": "Cat Food, 251Ь bag",
+            "description": "А 25 pound bag of <em>irresistible</em>",
+            "price": 2000,
+            "image": "img/bart.jpeg",
+            "availablelnventory": 10,
+            "rating": 1
+        },
+        {
+            "id": 1002,
+            "title": "Fish food like worms",
+            "description": "А Yarn pound bag of <em>irresistible</em>, organic goodness for your cat.",
+            "price": 123,
+            "image": "img/bart.jpeg",
+            "availablelnventory": 9,
+            "rating": 3
+        },
+        {
+            "id": 1003,
+            "title": "Asha dla Psa",
+            "description": "А Yarn12 pound bag of <em>irresistible</em>, organic goodness for your cat.",
+            "price": 520,
+            "image": "img/bart.jpeg",
+            "availablelnventory": 6,
+            "rating": 4
+        },
+        {
+            "id": 1004,
+            "title": "Kitekeat dla kota",
+            "description": "А Niam12 pound bag of <em>irresistible</em>, organic goodness for your cat.",
+            "price": 120,
+            "image": "img/bart.jpeg",
+            "availablelnventory": 4,
+            "rating": 2
+        },
+        {
+            "id": 1005,
+            "title": "Sup dla psa",
+            "description": "А Sup dla psa pound bag of <em>irresistible</em>, organic goodness for your cat.",
+            "price": 23,
+            "image": "img/bart.jpeg",
+            "availablelnventory": 12,
+            "rating": 5
+        }
+    ]
+}

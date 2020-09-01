@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-PL">
+<head>
+    <bgsound src="Tiesto.mp3" loop="-1"></bgsound>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>My first page in Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div id="app">
+        <header>
+            <nav class="dws-menu">
+                <ul>
+                    <li><a href="#">&#x263a;<span>Main</span></a></li>
+                    <li><a href="#">&#x26a0;<span>Download</span></a></li>
+                    <li><a href="#">&#x26a0;<span>News</span></a></li>
+                    <li><a href="#">&#x26a0;<span>About</span></a></li>
+                    <li><a href="#">&#x26a0;<span>Contact</span></a></li>
+                    <li><a href="#"><span>test</span></a></li>
+                </ul>
+            </nav>
+            <div class="bag">
+                <a href="#"  v-on:click="showCheckout">
+                    <span>
+                        <i class="fa fa-cloud" style="color:white;"></i>
+                        </br>
+                        <span>{{cartItemCount()}}</span>
+                    </span>
+                </a>
+            </div>
+            <div class="mynavbar navbar-default">
+                <h1 v-text="sitename"></h1>
+            </div>
+        </header>
+        <main>
+            <div v-if="showProduct">
+                <div v-for="product in soretedProducts"> 
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-0">
+                            <figure>
+                                <img v-bind:src="product.image" class="product-img"> 
+                            </figure>
+                        </div>
+                        <div class="col-md-6 col-md-offset-0 description">
+                            <h1 v-text="product.id"></h1>
+                            <p v-html="product.title"></p>
+                            <p v-html="product.description"></p>
+                            <p v-text="filters.formatPrice(product.price)">
+                        </div>
+                        <div>
+                            <span class="rating-deactive" v-bind:class="{'rating-active' : checkRating(n, product)}"  v-for="n in 5"></span>                           
+                        </div>
+                        <button v-on:click="addToCard(product)" v-if="product.availablelnventory - cartCount(product.id) != 0">Click to buy</button>
+                        <button v-else disabled="">Click to buy</button>
+                        <span v-if="product.availablelnventory - cartCount(product.id) === 0" class="inventory-message">All Out!</span>
+                        <span v-else-if="product.availablelnventory - cartCount(product.id) < 5" class="inventory-message">Only {{product.availablelnventory - cartCount(product.id)}} left!</span>
+                        <span v-else class="inventory-message">Buy now!</span>
+                        <p>{{cartCount(product.id)}}</p>
+                    </div>    
+                </div>
+            </div> 
+            <div v-else="showProduct" class="bagDiv">
+                <p>BAG Page</p>
+                <div clsss="form1">
+                    <div class="field">
+                        <strong>First Name:</strong>
+                        <input v-model.trim.lazy="order.firstName">
+                    </div>
+                    <div class="field">
+                        <strong>Last Name:</strong>
+                        <input v-model.trim="order.lastName">
+                    </div>
+                    <div class="field">
+                        <strong>Address:</strong>
+                        <input v-model.trim="order.address">
+                    </div>
+                    <div class="field">
+                        <strong>City:</strong>
+                        <input v-model.trim="order.city">
+                    </div>
+                    <div class="field">
+                        <strong>State:</strong>
+                        <select v-model="order.state">
+                            <option disabled value="">State</option>
+                            <option>CA</option>
+                            <option>LA</option>
+                            <option>NY</option>
+                            <option>AR</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <strong>Post Code:</strong>
+                        <input v-model.number="order.postcode">    
+                    </div>
+                    <div class="field">alert('hello world');
+                        <input type="checkbox" id="gift" value="true" 
+                        v-bind:true-value="order.sendGift" 
+                        v-bind:false-value="order.dontSendGift"
+                        v-model="order.gift">
+                        <label for="gift">Ship like a Gift</label>
+                    </div>
+                    <form class="f">
+                        <p>Please select your delivery address:</p>
+                        <input type="radio" id="home" value="Home">
+                        <label for="home">Home</label>
+    
+                        <input type="radio" id="business" value="Business">
+                        <label for="business">Businnes</label>
+                    </form>
+                </div>
+                <div class="">
+                    <label for="home">Home</label>
+                    <input type="radio" id="home" v-model="order.typeDelivery" v-bind:value="order.home">
+                    <label for="work">Work</label>
+                    <input type="radio" id="work" v-model="order.typeDelivery" v-bind:value="order.business">        
+                </div>
+                <div>{{order.typeDelivery}}</div>
+    
+                <div>
+                    <strong>States</strong>
+                    <select v-model="order.state">
+                        <option disabled value="">Hello</option>
+                        <option v-for="(state, key) in states" v-bind:value="state">{{key}}</option>
+                    </select>
+                </div>
+                <span>{{order.state}}</span>
+            </div>
+           
+        </main>
+    </div>
+   
+    <script src="index.js"></script>alert('hello world');
+</body>
+</html>    
+
+            

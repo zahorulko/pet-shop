@@ -1,0 +1,170 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  border: 2px solid black;
+}
+
+.row-product{
+  display: flex;
+}
+
+.product-img {
+  height: 120px;
+  display: block;
+}
+
+.col-exand {
+  margin-left: 10px;
+  width: 400px;
+  font-size: 12px;
+}
+
+.buy_btn {
+  background-color: green;
+  color: aliceblue;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+.icon {
+  width: 22px;
+}
+
+.color_icon {
+  background-color: brown;
+}
+
+.mynavbar {
+  background-color: green;
+  padding: 0 30px 0 30px;
+  position: relative;
+}
+
+.cart {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: 2px black solid;
+  background-color: white;
+  width: 120px;
+  height: 25px;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.mynavbar h1 {
+  color: black;
+  height: 80px;
+  margin: 0;
+}
+
+.field {
+  clear: both;
+  text-align: right;
+}
+
+strong {
+  float: left;
+}
+
+.bagDiv{
+  padding: 20px;
+}
+
+.inventory-message {
+  background-color: hotpink;
+  color: black;
+  font-size: large;
+}
+
+.rating-deactive:after {
+  content: '\2606';
+}
+
+.rating-active:after {
+  content: '\2605';
+  }
+
+/* discribe nav menu */
+
+.dws-menu *{
+  margin: 0;
+  padding: 0;
+}
+
+.dws-menu {
+  margin: 10px 0 20px 0;
+}
+
+.dws-menu ul li {
+  list-style: none;
+  border-right: 2px #c7c8ca solid;
+}
+
+.dws-menu ul li:first-child {
+  border-left: 2px #c7c8ca solid;
+}
+
+.dws-menu ul {
+  display: flex;
+  justify-content: center;
+}
+
+.dws-menu ul li a {
+  display: block;
+  background: #ececed;
+  padding: 15px 30px;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #454547;
+}
+
+.dws-menu ul li a span {
+  margin-left: 5px;
+}
+
+.dws-menu ul li > a {
+  font-size: 16px;
+}
+
+.dws-menu ul li a:hover {
+  background-color: #454547;
+  color: #ffffff;
+  box-shadow: 1px 5px 10px -5px black;
+  transition: all 0.3s ease;
+}
+
+.bag a {
+  display: block;
+  padding: 10px 25px;
+  background-color: #ececed;
+  border: 2px #c7c8ca solid;
+  width: 40px;
+  text-align: center;
+}
+
+.bag a:hover {
+  background-color: #454547;
+  color: #ffffff;
+  box-shadow: 1px, 5px 10px -5px black;
+  transition: all 0.3s ease;
+}
+
+.bag {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+
+header {
+  font-family: 'Cuprum', sans-serif;
+}
+
+
+
